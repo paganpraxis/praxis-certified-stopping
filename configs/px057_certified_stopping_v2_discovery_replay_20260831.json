@@ -1,0 +1,39 @@
+{
+  "experiment_id": "px057-certified-stopping-v2-discovery-replay-20260831",
+  "px_id": "PX-057-v2",
+  "status": "discovery_replay_not_confirmatory",
+  "protocol": {
+    "type": "rolling_self_revision_previous_solution_only",
+    "rounds": 8,
+    "accumulated_transcript": false
+  },
+  "policy": {
+    "type": "answer_stability",
+    "min_round": 2,
+    "patience": 2,
+    "confidence_threshold": null
+  },
+  "extraction": {
+    "primary_precedence": [
+      "boxed",
+      "strict_explicit",
+      "fallback_last_number"
+    ],
+    "purpose": "reproduce_legacy_px057_scorer_before_manual_adjudication"
+  },
+  "inference": {
+    "alpha": 0.05,
+    "bound": "one_sided_clopper_pearson",
+    "dual_error_control": "bonferroni_equal_split"
+  },
+  "certificates": {
+    "harm_ceiling": 0.02,
+    "net_effect_floor": -0.01
+  },
+  "protocol_admissibility": {
+    "reference_round": 2,
+    "margin": 0.05,
+    "reference_round_selection": "discovery_only_not_preregistered"
+  },
+  "claim_boundary": "This configuration replays archived PX-057 discovery data. It can diagnose and size the successor but cannot produce a confirmatory certificate."
+}

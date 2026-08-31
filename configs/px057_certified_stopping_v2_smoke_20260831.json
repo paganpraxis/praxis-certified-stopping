@@ -1,0 +1,37 @@
+{
+  "experiment_id": "px057-certified-stopping-v2-deterministic-smoke-20260831",
+  "status": "harness_smoke_only",
+  "protocol": {
+    "type": "rolling_self_revision_previous_solution_only",
+    "rounds": 8,
+    "accumulated_transcript": false
+  },
+  "policy": {
+    "type": "answer_stability",
+    "min_round": 2,
+    "patience": 2,
+    "confidence_threshold": null
+  },
+  "extraction": {
+    "primary_precedence": ["boxed", "strict_explicit", "fallback_last_number"]
+  },
+  "inference": {
+    "alpha": 0.05,
+    "bound": "one_sided_clopper_pearson",
+    "dual_error_control": "bonferroni_equal_split"
+  },
+  "certificates": {
+    "harm_ceiling": 0.50,
+    "net_effect_floor": -0.50
+  },
+  "protocol_admissibility": {
+    "reference_round": 2,
+    "margin": 0.05,
+    "reference_round_selection": "controlled_fixture"
+  },
+  "causal_split": {
+    "arm": "context_reset",
+    "reference_tolerance": 0.03
+  },
+  "claim_boundary": "Controlled deterministic fixture only. Gate values validate software paths and support no scientific claim."
+}

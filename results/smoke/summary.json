@@ -1,0 +1,114 @@
+{
+  "experiment_id": "px057-certified-stopping-v2-deterministic-smoke-20260831",
+  "status": "PASS",
+  "scientific_claim_allowed": false,
+  "checks": {
+    "two_arms_present": true,
+    "eight_rounds_per_item_arm": true,
+    "rolling_carries_previous_only": true,
+    "reset_has_no_previous_solution": true,
+    "token_accounting_available": true,
+    "paired_table_reconstructed": true,
+    "context_reset_analyzed": true,
+    "extractors_exercised": true
+  },
+  "analysis": {
+    "n_items": 4,
+    "policy": {
+      "type": "answer_stability",
+      "min_round": 2,
+      "patience": 2,
+      "confidence_threshold": null
+    },
+    "accuracy": {
+      "stopped": 0.5,
+      "full": 0.5,
+      "reference_round": 0.5,
+      "by_round": [
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ]
+    },
+    "stopped_vs_full_table": {
+      "both_wrong": 1,
+      "first_wrong_second_correct": 1,
+      "first_correct_second_wrong": 1,
+      "both_correct": 1
+    },
+    "reference_vs_full_table": {
+      "both_wrong": 1,
+      "first_wrong_second_correct": 1,
+      "first_correct_second_wrong": 1,
+      "both_correct": 1
+    },
+    "stopping_harm_certificate": {
+      "count": 1,
+      "point": 0.25,
+      "upper_confidence_bound": 0.7513953742698185,
+      "ceiling": 0.5,
+      "passes": false
+    },
+    "paired_net_effect_certificate": {
+      "discordant_pairs": 2,
+      "rescues": 1,
+      "losses": 1,
+      "point": 0.0,
+      "lower_confidence_bound": -0.47467943448089644,
+      "floor": -0.5,
+      "passes": true
+    },
+    "dual_certificate": {
+      "shared_error_budget": 0.05,
+      "per_component_alpha": 0.025,
+      "harm_upper_confidence_bound": 0.8058795503167566,
+      "net_effect_lower_confidence_bound": -0.4874208829065749,
+      "passes": false
+    },
+    "protocol_admissibility": {
+      "discordant_pairs": 2,
+      "rescues": 1,
+      "losses": 1,
+      "point": 0.0,
+      "lower_confidence_bound": -0.47467943448089644,
+      "reference_round": 2,
+      "full_round": 8,
+      "margin": 0.05,
+      "protocol_inadmissible": false,
+      "causal_interpretation": "pending_context_reset_arm"
+    },
+    "context_reset_causal_split": {
+      "accuracy": 0.75,
+      "paired_table_vs_rolling_full": {
+        "both_wrong": 1,
+        "first_wrong_second_correct": 0,
+        "first_correct_second_wrong": 1,
+        "both_correct": 2
+      },
+      "within_reference_tolerance": false
+    },
+    "extraction_audit": {
+      "primary_precedence": [
+        "boxed",
+        "strict_explicit",
+        "fallback_last_number"
+      ],
+      "method_counts": {
+        "strict_explicit": 64
+      },
+      "template_disagreements": 0,
+      "requires_manual_review": 0
+    },
+    "cost_accounting": {
+      "generated_token_saving": 0.75,
+      "prompt_tokens_available": true,
+      "billed_token_saving": 0.8035714285714286,
+      "claim_allowed": "billed-token saving may be computed in prospective run"
+    }
+  }
+}

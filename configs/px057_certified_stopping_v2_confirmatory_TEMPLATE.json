@@ -1,0 +1,46 @@
+{
+  "experiment_id": "REPLACE_BEFORE_FREEZE",
+  "status": "template_not_frozen",
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "REPLACE_WITH_IMMUTABLE_COMMIT_SHA",
+  "dataset_url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl",
+  "dataset_sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14",
+  "sample_size": 400,
+  "sample_seed": "REPLACE_WITH_FRESH_SEED",
+  "rounds": 8,
+  "max_new_tokens": 256,
+  "output_dir": "REPLACE_WITH_CONFIRMATORY_OUTPUT_PATH",
+  "protocol": {
+    "type": "rolling_self_revision_previous_solution_only",
+    "rounds": 8,
+    "accumulated_transcript": false
+  },
+  "policy": {
+    "type": "answer_stability",
+    "min_round": 2,
+    "patience": 2,
+    "confidence_threshold": null
+  },
+  "extraction": {
+    "primary_precedence": ["boxed", "strict_explicit", "fallback_last_number"],
+    "manual_adjudication": "blinded_for_all_disagreements_and_empty_parses"
+  },
+  "inference": {
+    "alpha": 0.05,
+    "bound": "one_sided_clopper_pearson",
+    "dual_error_control": "bonferroni_equal_split"
+  },
+  "certificates": {
+    "harm_ceiling": 0.02,
+    "net_effect_floor": -0.01
+  },
+  "protocol_admissibility": {
+    "reference_round": 2,
+    "margin": 0.05,
+    "reference_round_selection": "must_be_frozen_before_run"
+  },
+  "causal_split": {
+    "arm": "context_reset",
+    "reference_tolerance": 0.03
+  }
+}

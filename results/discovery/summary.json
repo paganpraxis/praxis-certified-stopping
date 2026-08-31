@@ -1,0 +1,93 @@
+{
+  "n_items": 200,
+  "policy": {
+    "type": "answer_stability",
+    "min_round": 2,
+    "patience": 2,
+    "confidence_threshold": null
+  },
+  "accuracy": {
+    "stopped": 0.91,
+    "full": 0.615,
+    "reference_round": 0.88,
+    "by_round": [
+      0.53,
+      0.88,
+      0.82,
+      0.725,
+      0.695,
+      0.615,
+      0.645,
+      0.615
+    ]
+  },
+  "stopped_vs_full_table": {
+    "both_wrong": 17,
+    "first_wrong_second_correct": 1,
+    "first_correct_second_wrong": 60,
+    "both_correct": 122
+  },
+  "reference_vs_full_table": {
+    "both_wrong": 17,
+    "first_wrong_second_correct": 7,
+    "first_correct_second_wrong": 60,
+    "both_correct": 116
+  },
+  "stopping_harm_certificate": {
+    "count": 1,
+    "point": 0.005,
+    "upper_confidence_bound": 0.023498470434950736,
+    "ceiling": 0.02,
+    "passes": false
+  },
+  "paired_net_effect_certificate": {
+    "discordant_pairs": 61,
+    "rescues": 60,
+    "losses": 1,
+    "point": 0.295,
+    "lower_confidence_bound": 0.25899256046139396,
+    "floor": -0.01,
+    "passes": true
+  },
+  "dual_certificate": {
+    "shared_error_budget": 0.05,
+    "per_component_alpha": 0.025,
+    "harm_upper_confidence_bound": 0.027541898457205616,
+    "net_effect_lower_confidence_bound": 0.2513272450171254,
+    "passes": false
+  },
+  "protocol_admissibility": {
+    "discordant_pairs": 67,
+    "rescues": 60,
+    "losses": 7,
+    "point": 0.265,
+    "lower_confidence_bound": 0.2095110423973394,
+    "reference_round": 2,
+    "full_round": 8,
+    "margin": 0.05,
+    "protocol_inadmissible": true,
+    "causal_interpretation": "pending_context_reset_arm"
+  },
+  "context_reset_causal_split": null,
+  "extraction_audit": {
+    "primary_precedence": [
+      "boxed",
+      "strict_explicit",
+      "fallback_last_number"
+    ],
+    "method_counts": {
+      "fallback_last_number": 204,
+      "strict_explicit": 1241,
+      "boxed": 154,
+      "empty": 1
+    },
+    "template_disagreements": 307,
+    "requires_manual_review": 308
+  },
+  "cost_accounting": {
+    "generated_token_saving": 0.6691239241967104,
+    "prompt_tokens_available": false,
+    "billed_token_saving": null,
+    "claim_allowed": "generated-token saving only"
+  }
+}

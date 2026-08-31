@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "praxis-certified-stopping"
+version = "0.1.0"
+description = "Finite-sample certification and protocol diagnosis for LLM early stopping"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+model = [
+  "accelerate>=1,<2",
+  "requests>=2.32,<3",
+  "torch>=2.4,<3",
+  "transformers>=4.46,<5"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools]
+packages = []
